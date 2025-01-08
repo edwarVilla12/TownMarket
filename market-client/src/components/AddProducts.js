@@ -44,7 +44,7 @@ export default class AddProducts extends Component {
                     <div className="row">
                         <div className="input-field col s6">
                             <input 
-                                placeholder="Placeholder" 
+                                placeholder="" 
                                 name="productName"
                                 type="text" 
                                 className="validate"
