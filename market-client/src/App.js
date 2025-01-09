@@ -1,18 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MainPage';
-import DevelopersPage from './pages/DevelopersPage';
-import FreelanceModePage from './pages/FreelanceModePage';
+import MainPage from './pages/MainPage'; // Adjust the path if necessary
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/developers" element={<DevelopersPage />} />
-        <Route path="/freelance-mode" element={<FreelanceModePage />} />
-      </Routes>
-    </Router>
+    <div className="min-h-screen">
+      <MainPage />
+    </div>
   );
 }
 
