@@ -1,0 +1,241 @@
+/* GitHub Dark Mode Inspired Styles with Dracula Accents */
+
+:root {
+  --dracula-pink: #44c7b5;
+  --dracula-orange: #ffb86c;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: #0d1117; /* GitHub dark mode background */
+  color: #c9d1d9; /* GitHub dark mode text color */
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-grid {
+  position: fixed;
+  inset: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNNjAgMEgwdjYwaDYwVjB6TTIgMmg1NnY1NkgyVjJ6IiBmaWxsPSIjMjkyNTI0IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvZz48L3N2Zz4=') no-repeat center center;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, var(--dracula-pink), var(--dracula-orange));
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  animation: gradient 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.subtitle {
+  color: #c9d1d9; /* GitHub dark mode text color */
+  font-size: 1.25rem;
+}
+
+.grid {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  background-color: #161b22; /* GitHub dark mode slightly lighter background */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #30363d; /* GitHub dark mode border color */
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--dracula-pink); /* Dracula pink border on hover */
+}
+
+.card-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--dracula-pink)33, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .card-glow {
+  opacity: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 10;
+}
+
+.card-header {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(to bottom right, var(--dracula-pink), var(--dracula-orange));
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #161b22; /* GitHub dark mode slightly lighter background */
+}
+
+.badge {
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  background: #f1c40f; /* GitHub yellow */
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #161b22; /* GitHub dark mode slightly lighter background */
+}
+
+.developer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.developer-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dracula-pink); /* Dracula pink */
+  margin-bottom: 0.25rem;
+}
+
+.developer-role {
+  color: #8b949e; /* GitHub dark mode secondary text color */
+  font-size: 0.875rem;
+}
+
+.section {
+  background: rgba(22, 27, 34, 0.5); /* GitHub dark mode slightly lighter background */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--dracula-pink); /* Dracula pink */
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(68, 199, 181, 0.2); /* Dracula pink border */
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(22, 27, 34, 0.5); /* GitHub dark mode slightly lighter background */
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: #8b949e; /* GitHub dark mode secondary text color */
+}
+
+.button {
+  width: 100%;
+  background: linear-gradient(to right, var(--dracula-pink), var(--dracula-orange));
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.3s;
+  margin-top: 1.5rem;
+}
+
+.button:hover {
+  background: linear-gradient(to right, #2ea043, #238636); /* GitHub green */
+}
+
+.arrow {
+  transform: translateX(0);
+  transition: transform 0.3s;
+}
+
+.button:hover .arrow {
+  transform: translateX(0.25rem);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.spinner {
+  width: 4rem;
+  height: 4rem;
+  border: 4px solid var(--dracula-pink); /* Dracula pink */
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,7 +1,10 @@
 // MainPage.js
 import React from 'react';
-import './MainPage.css';
+import '../styles/MainPage.css';
 import BackgroundAnimation from './BackgroundAnimation';
+import Header from '../components/Header';
+import FuturisticText from '../components/FuturisticText';
+
 
 function MainPage() {
   const features = [
@@ -19,37 +22,51 @@ function MainPage() {
     },
   ];
 
+  const navItems = [
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#services' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  const handleFindDevelopers = () => {
+    window.location.href = './developers';  // Redirect to Projects page (just an example)
+  };
+
+  const handleFindDeveloper = () => {
+    window.location.href = './developers';  // Redirect to Projects page (just an example)
+  };
+
   return (
     <div>
 
-      
+      <BackgroundAnimation />
 
       {/* Header */}
-      <header>
-        <nav>
-          <div>Summer Software Company</div>
-          <div>
-            <button>About</button>
-            <button>Services</button>
-            <button>Contact</button>
+      <Header 
+        logo={
+          <div className="company-name">
+            <FuturisticText text="Enigma" className="word-summer" />
+            <FuturisticText text="Software" className="word-software" />
+            <FuturisticText text="Company" className="word-company" />
           </div>
-        </nav>
-      </header>
+        }
+        navItems={navItems}
+      />
 
-      <BackgroundAnimation />
+   
       
       {/* Hero Section */}
       <div className="hero-section">
         <h1>
           Welcome to the Future of
-          <span className="highlight"> Tech Solutions</span>
+          <span className="highlight"> Enigma solutions</span>
         </h1>
         <p>
           Discover top tech talent, innovative projects, and freelance opportunities all in one place.
         </p>
         <div>
-          <button>Find Developers</button>
-          <button>Browse Projects</button>
+          <button onClick={handleFindDevelopers}>Find Developers</button>
+          <button onClick={handleFindDeveloper}>Browse Projects</button>
         </div>
       </div>
 
