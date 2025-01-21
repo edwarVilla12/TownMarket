@@ -13,6 +13,25 @@
   position: relative;
   overflow: hidden;
 }
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+  position: relative;
+}
+
+.page-header {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 
 .background-grid {
   position: fixed;
@@ -50,9 +69,36 @@
   }
 }
 
+
+
 .subtitle {
   color: #c9d1d9; /* GitHub dark mode text color */
   font-size: 1.25rem;
+}
+
+.back-button {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 1px solid var(--dracula-pink);
+  color: var(--dracula-pink);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: var(--dracula-pink);
+  color: #0d1117;
+  box-shadow: 0 0 20px rgba(68, 199, 181, 0.3);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .grid {
@@ -239,3 +285,4 @@
     transform: rotate(360deg);
   }
 }
+

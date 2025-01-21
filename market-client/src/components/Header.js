@@ -1,45 +1,50 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../styles/Header.css';
-import BackgroundAnimation from '../pages/BackgroundAnimation';
 
-const Logo = () => (
-  <svg 
-    viewBox="0 0 100 100" 
-    className="h-8 w-8 mr-2"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path 
-      d="M10 50 L50 10 L90 50 L50 90 Z" 
-      fill="#0088cc"
-      opacity="0.8"
-    />
-    <path 
-      d="M30 50 L50 30 L70 50 L50 70 Z" 
-      fill="#00aaff"
-      opacity="0.6"
-    />
-  </svg>
-);
-
-function Header({ logo, navItems }) {
+const Header = ({ navigationLinks = [], logo }) => {
   return (
-
-    
     <header className="header">
-      
-      <nav className="nav-container">
-        <div className="logo">{logo}</div>
-        
-        <ul className="nav-items">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="header-content">
+        <div className="header-left">
+          <div className="logo-container">
+            {logo}
+          </div>
+          <nav className="nav-links">
+            {navigationLinks.map((link, index) => (
+              <Link 
+                key={index} 
+                to={link.path} 
+                className="nav-link"
+              >
+                {link.text}
+              </Link>
+            ))}
+          </nav>
+        </div>
+        <div className="header-right">
+          <Link to="/contact" className="nav-link">
+            Contact Us
+          </Link>
+        </div>
+      </div>
     </header>
   );
-}
+};
+
+Header.propTypes = {
+  navigationLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    })
+  ),
+  logo: PropTypes.node,
+};
+
+Header.defaultProps = {
+  navigationLinks: [],
+};
 
 export default Header;
